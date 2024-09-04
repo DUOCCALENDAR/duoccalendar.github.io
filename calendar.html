@@ -26,6 +26,12 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             position: relative;
+            text-align: center;
+        }
+
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -34,25 +40,29 @@
             padding: 10px;
             text-align: center;
             border-radius: 5px;
-            font-size: 1.6em; /* Aumento del tamaño del título */
+            font-size: 1.6em;
         }
 
-        .logo {
-            display: block;
-            margin: 0 auto 20px;
-            width: 200px;
+        .calendar-message {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
-        .video-link {
-            color: #007bff;
-            text-decoration: none;
+        .datetime {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #003366;
+            color: #ffd700;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
 
-        .video-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilo para el calendario */
         .fc {
             background-color: #003366;
         }
@@ -90,7 +100,7 @@
             text-align: center;
             padding: 5px;
             border-radius: 5px;
-            font-size: 1.3em; /* Aumento del tamaño del título del calendario */
+            font-size: 1.3em;
         }
 
         .fc-prev-button, .fc-next-button, .fc-today-button {
@@ -114,13 +124,6 @@
             color: #ffffff;
         }
 
-        .calendar-message {
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        /* Estilo para eventos importantes */
         .fc-event {
             display: flex;
             flex-direction: column;
@@ -128,11 +131,11 @@
             justify-content: center;
             text-align: center;
             font-weight: bold;
-            font-size: 0.8em; /* Tamaño de fuente ajustado */
+            font-size: 0.8em;
             background-color: #28a745;
             color: #ffffff !important;
             border-radius: 5px;
-            padding: 6px 10px; /* Padding ajustado */
+            padding: 6px 10px;
             margin-bottom: 2px;
             box-sizing: border-box;
             white-space: normal;
@@ -154,26 +157,13 @@
         }
 
         .fc-event-time {
-            font-size: 0.7em; /* Tamaño de fuente ajustado */
+            font-size: 0.75em;
             color: #ffffff;
-            margin-top: 2px; /* Espacio adicional entre el título y la información adicional */
+            margin-top: 2px;
         }
 
         .fc-daygrid-day-events {
             margin-top: 10px;
-        }
-
-        .datetime {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #003366;
-            color: #ffd700;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
 
         /* Media Queries para dispositivos móviles */
@@ -184,7 +174,7 @@
             }
 
             h1 {
-                font-size: 1.4em; /* Ajuste para pantallas más pequeñas */
+                font-size: 1.4em;
             }
 
             .logo {
@@ -192,16 +182,16 @@
             }
 
             .fc-toolbar-title {
-                font-size: 1.1em; /* Ajuste para pantallas más pequeñas */
+                font-size: 1.1em;
             }
 
             .fc-event {
-                font-size: 0.75em; /* Ajuste adicional para dispositivos móviles */
+                font-size: 0.75em;
                 padding: 5px 8px;
             }
 
             .fc-event-time {
-                font-size: 0.65em; /* Ajuste adicional para dispositivos móviles */
+                font-size: 0.65em;
             }
 
             .datetime {
@@ -216,7 +206,7 @@
             }
 
             h1 {
-                font-size: 1.2em; /* Ajuste para pantallas aún más pequeñas */
+                font-size: 1.2em;
             }
 
             .logo {
@@ -224,17 +214,16 @@
             }
 
             .fc-toolbar-title {
-                font-size: 1em; /* Ajuste para pantallas aún más pequeñas */
+                font-size: 1em;
             }
 
             .fc-event {
-                font-size: 0.7em; /* Ajuste adicional para dispositivos móviles más pequeños */
+                font-size: 0.7em;
                 padding: 4px 6px;
-                max-width: 100%;
             }
 
             .fc-event-time {
-                font-size: 0.6em; /* Ajuste adicional para dispositivos móviles más pequeños */
+                font-size: 0.6em;
             }
 
             .datetime {
@@ -246,10 +235,10 @@
 <body>
     <div class="container">
         <img src="https://imgur.com/KsCmNfz.jpg" alt="Logo" class="logo"/>
+        <div id="datetime" class="datetime"></div> <!-- Sección para fecha y hora centrada -->
         <h1>DUOC-CALENDAR</h1>
         <p class="calendar-message">Puedes ver las fechas importantes y hacer clic en el evento habilitado para ver el video tutorial del proceso.</p>
         <div id='calendar'></div>
-        <div id="datetime" class="datetime"></div>
     </div>
 
     <script>
@@ -356,7 +345,6 @@
                     right: 'prev,next today'
                 }
             });
-
             calendar.render();
 
             function updateDateTime() {
