@@ -122,18 +122,24 @@
 
         /* Estilo para eventos importantes */
         .fc-event {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             font-weight: bold;
             font-size: 0.9em;
             background-color: #28a745;
             color: #ffffff !important;
             border-radius: 5px;
-            padding: 5px 10px;
+            padding: 5px;
             margin-bottom: 2px;
             box-sizing: border-box;
-            white-space: normal; /* Permite que el texto se ajuste en múltiples líneas */
+            white-space: normal;
             overflow: hidden;
-            text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
+            text-overflow: clip; /* Cambiado a clip para evitar puntos suspensivos en eventos de una sola línea */
+            width: 100%;
+            max-width: 160px; /* Asegura que el evento no sea demasiado ancho en pantallas grandes */
         }
 
         .fc-event.holiday {
@@ -145,6 +151,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
         }
 
         .fc-event-time {
@@ -191,6 +198,7 @@
             .fc-event {
                 font-size: 0.8em;
                 padding: 5px 8px;
+                max-width: 140px;
             }
 
             .datetime {
@@ -219,6 +227,7 @@
             .fc-event {
                 font-size: 0.7em;
                 padding: 5px 5px;
+                max-width: 120px; /* Asegura que el título del evento sea más accesible en pantallas pequeñas */
             }
 
             .datetime {
@@ -290,77 +299,26 @@
                         start: '2024-09-14',
                         url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
                         extendedProps: {
-                            additionalInfo: 'Vence plazo Retiro'
+                            additionalInfo: 'Desde el 14/09 hasta el 15/10'
                         }
-                    },
-                    {
-                        title: 'Media jornada de clases',
-                        start: '2024-09-17',
-                        extendedProps: {
-                            additionalInfo: 'Retiro a las 13:00'
-                        }
-                    },
-                    {
-                        title: 'Feriado',
-                        start: '2024-09-18',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado',
-                        start: '2024-09-19',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado',
-                        start: '2024-09-20',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado',
-                        start: '2024-09-21',
-                        className: 'holiday'
                     }
                 ],
-                eventContent: function(arg) {
-                    let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
-                    if (arg.event.extendedProps.additionalInfo) {
-                        eventInfo += `<div class="fc-event-time">${arg.event.extendedProps.additionalInfo}</div>`;
-                    }
-                    return { html: eventInfo };
-                },
                 eventClick: function(info) {
                     if (info.event.url) {
                         window.open(info.event.url, '_blank');
-                        info.jsEvent.preventDefault();
+                        info.jsEvent.preventDefault(); // Avoid redirecting if the event has a URL
                     }
-                },
-                headerToolbar: {
-                    left: '',
-                    center: 'title',
-                    right: 'prev,next today'
-                },
-                windowResize: function(view) {
-                    calendar.updateSize();
                 }
             });
+
             calendar.render();
 
+            // Display current date and time
             function updateDateTime() {
-                var now = new Date();
-                var options = {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: false
-                };
-                var datetimeString = now.toLocaleDateString('es-ES', options);
-                document.getElementById('datetime').textContent = datetimeString;
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                document.getElementById('datetime').textContent = now.toLocaleDateString('es-ES', options);
             }
-
             updateDateTime();
             setInterval(updateDateTime, 1000);
         });
