@@ -31,7 +31,18 @@
 
         .logo {
             width: 200px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .datetime {
+            background-color: #003366;
+            color: #ffd700;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px; /* Espacio debajo de la fecha y hora */
         }
 
         h1 {
@@ -47,20 +58,6 @@
             text-align: center;
             font-weight: bold;
             margin-bottom: 20px;
-        }
-
-        .datetime {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #003366;
-            color: #ffd700;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
 
         .fc {
@@ -181,6 +178,11 @@
                 width: 150px;
             }
 
+            .datetime {
+                font-size: 1em;
+                margin-bottom: 15px; /* Ajustar margen inferior para dispositivos más pequeños */
+            }
+
             .fc-toolbar-title {
                 font-size: 1.1em;
             }
@@ -192,10 +194,6 @@
 
             .fc-event-time {
                 font-size: 0.65em;
-            }
-
-            .datetime {
-                font-size: 0.9em;
             }
         }
 
@@ -213,6 +211,11 @@
                 width: 120px;
             }
 
+            .datetime {
+                font-size: 0.9em;
+                margin-bottom: 10px; /* Ajustar margen inferior para dispositivos más pequeños */
+            }
+
             .fc-toolbar-title {
                 font-size: 1em;
             }
@@ -225,17 +228,13 @@
             .fc-event-time {
                 font-size: 0.6em;
             }
-
-            .datetime {
-                font-size: 0.8em;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="https://imgur.com/KsCmNfz.jpg" alt="Logo" class="logo"/>
-        <div id="datetime" class="datetime"></div> <!-- Sección para fecha y hora centrada -->
+        <div id="datetime" class="datetime"></div> <!-- Sección para fecha y hora centrada debajo del logo -->
         <h1>DUOC-CALENDAR</h1>
         <p class="calendar-message">Puedes ver las fechas importantes y hacer clic en el evento habilitado para ver el video tutorial del proceso.</p>
         <div id='calendar'></div>
