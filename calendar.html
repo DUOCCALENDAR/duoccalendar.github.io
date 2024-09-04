@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #e9ecef; /* Color de fondo general de la página */
+            background-color: #e9ecef;
             color: #333;
             margin: 0;
             padding: 0;
@@ -19,7 +19,7 @@
 
         .container {
             width: 90%;
-            max-width: 1000px; /* Ajusta el ancho máximo del contenedor */
+            max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
             background-color: #ffffff;
@@ -40,7 +40,7 @@
         .logo {
             display: block;
             margin: 0 auto 20px;
-            width: 200px; /* Ajusta el ancho del logo */
+            width: 200px;
         }
 
         .video-link {
@@ -54,98 +54,93 @@
 
         /* Estilo para el calendario */
         .fc {
-            background-color: #003366; /* Fondo general del calendario */
+            background-color: #003366;
         }
 
         .fc-daygrid-day {
-            background-color: #ffffff; /* Fondo blanco de los días del calendario */
-            border: 2px solid #003366; /* Línea azul marino alrededor de los días */
-            color: #003366; /* Color del texto de los días del calendario */
+            background-color: #ffffff;
+            border: 2px solid #003366;
+            color: #003366;
         }
 
         .fc-daygrid-day-number {
-            color: #ffd700; /* Color del número del día en amarillo */
+            color: #ffd700;
         }
 
         .fc-daygrid-day-top {
-            background-color: #003366; /* Fondo de los encabezados de los días */
-            color: #ffd700; /* Color del texto de los encabezados de los días */
+            background-color: #003366;
+            color: #ffd700;
             font-weight: bold;
         }
 
         .fc-daygrid-day-top .fc-daygrid-day-number {
-            color: #ffffff; /* Color del número del día de los encabezados */
+            color: #ffffff;
         }
 
         .fc-toolbar {
             display: flex;
-            flex-direction: column; /* Asegura que los botones de navegación estén debajo del mes */
-            align-items: center; /* Centra los elementos dentro de la barra de herramientas */
-            margin-bottom: 10px; /* Espacio entre el calendario y la barra de navegación */
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
         .fc-toolbar-title {
-            background-color: #003366; /* Color de fondo para el mes y año */
-            color: #ffd700; /* Color del texto para el mes y año */
-            text-align: center; /* Asegura que el texto esté centrado */
-            padding: 5px; /* Espacio alrededor del texto */
-            border-radius: 5px; /* Radio de los bordes del fondo del título */
-            font-size: 1.2em; /* Tamaño de fuente para el mes y año */
-            text-transform: capitalize; /* Capitaliza la primera letra del mes */
+            background-color: #003366;
+            color: #ffd700;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 1.2em;
         }
 
         .fc-prev-button, .fc-next-button, .fc-today-button {
-            background-color: #000000; /* Fondo de los botones de navegación y "Hoy" */
-            color: #ffd700; /* Color del texto de los botones de navegación y "Hoy" */
-            border: none; /* Elimina el borde por defecto */
-            border-radius: 4px; /* Bordes redondeados opcionalmente */
-            padding: 5px 10px; /* Espacio interior opcional */
-            margin: 0 2px; /* Espacio entre los botones opcionalmente */
+            background-color: #000000;
+            color: #ffd700;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin: 0 2px;
         }
 
         .fc-prev-button:hover, .fc-next-button:hover, .fc-today-button:hover {
-            background-color: #333333; /* Fondo al pasar el ratón por encima */
+            background-color: #333333;
         }
 
-        /* Estilo para las flechas */
         .fc-prev-button:before, .fc-next-button:before {
-            color: #ffd700; /* Color de las flechas de navegación */
+            color: #ffd700;
         }
 
-        /* Cambia el color de los días de la semana (Lun, Mar, Mié, Jue, Vie, Sab, Dom) */
         .fc-col-header-cell-cushion {
-            color: #ffffff; /* Color del texto de los días de la semana */
+            color: #ffffff;
         }
 
-        /* Estilo para el mensaje centrado */
         .calendar-message {
             text-align: center;
             font-weight: bold;
-            margin-bottom: 20px; /* Espacio debajo del mensaje */
+            margin-bottom: 20px;
         }
 
         /* Estilo para eventos importantes */
         .fc-event {
             text-align: center;
             font-weight: bold;
-            font-size: 0.9em; /* Tamaño de fuente más pequeño para los eventos */
-            background-color: #28a745; /* Color de fondo verde para los eventos */
-            color: #ffffff !important; /* Color del texto en blanco para los eventos */
-            border-radius: 5px; /* Bordes redondeados opcionalmente */
-            padding: 5px 10px; /* Espacio interno dentro del evento */
-            margin-bottom: 2px; /* Espacio adicional en la parte inferior de los eventos */
-            overflow: hidden; /* Asegura que el contenido no se desborde */
-            white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
+            font-size: 0.9em;
+            background-color: #28a745;
+            color: #ffffff !important;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 2px;
+            box-sizing: border-box;
+            white-space: normal; /* Permite que el texto se ajuste en múltiples líneas */
+            overflow: hidden;
             text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
         }
 
-        /* Estilo específico para eventos con la clase 'holiday' */
         .fc-event.holiday {
-            background-color: #ff6347; /* Color de fondo rojo para los eventos 'Feriado' */
-            color: #ffffff !important; /* Color del texto de los eventos 'Feriado' en blanco */
+            background-color: #ff6347;
+            color: #ffffff !important;
         }
 
-        /* Personaliza el contenido de los eventos */
         .fc-event-content {
             display: flex;
             flex-direction: column;
@@ -153,27 +148,25 @@
         }
 
         .fc-event-time {
-            font-size: 0.8em; /* Tamaño de fuente más pequeño para el tiempo */
-            color: #ffffff; /* Color del texto del tiempo */
+            font-size: 0.8em;
+            color: #ffffff;
         }
 
-        /* Ajusta la posición vertical de los eventos */
         .fc-daygrid-day-events {
-            margin-top: 10px; /* Espacio adicional en la parte superior de los eventos */
+            margin-top: 10px;
         }
 
-        /* Estilo para la fecha y hora */
         .datetime {
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #003366; /* Fondo azul oscuro */
-            color: #ffd700; /* Texto en amarillo */
+            background-color: #003366;
+            color: #ffd700;
             padding: 10px;
-            border-radius: 5px; /* Bordes redondeados */
-            font-size: 1em; /* Tamaño de fuente */
-            font-weight: bold; /* Texto en negrita */
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
 
         /* Media Queries para dispositivos móviles */
@@ -347,7 +340,7 @@
                     right: 'prev,next today'
                 },
                 windowResize: function(view) {
-                    calendar.updateSize(); // Asegura que el calendario se ajuste al redimensionar la ventana
+                    calendar.updateSize();
                 }
             });
             calendar.render();
