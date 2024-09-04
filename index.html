@@ -144,11 +144,13 @@
             }
         }
 
-        /* Ajuste para orientación horizontal en dispositivos móviles */
+        /* Ocultar imagen de fondo y logo en orientación horizontal en dispositivos móviles */
         @media (max-width: 480px) and (orientation: landscape) {
+            .background-image {
+                display: none; /* Asegura que la imagen de fondo no se muestre en dispositivos móviles en orientación horizontal */
+            }
             .mobile-logo {
-                max-width: 200px; /* Ajusta el tamaño máximo del logo en orientación horizontal */
-                top: 10px; /* Ajusta el espacio desde la parte superior del contenedor */
+                display: none; /* Oculta el logo en orientación horizontal */
             }
         }
     </style>
