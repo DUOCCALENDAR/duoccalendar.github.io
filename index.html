@@ -24,12 +24,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://imgur.com/DqlHLlM.jpg'); /* Reemplaza con la ruta a tu imagen */
+            background-image: url('https://imgur.com/DqlHLlM.jpg'); /* Imagen por defecto */
             background-size: cover; /* Ajusta la imagen para cubrir el contenedor */
             background-position: center center; /* Centra la imagen */
             background-repeat: no-repeat;
             background-attachment: fixed; /* Mantiene la imagen fija durante el desplazamiento */
             z-index: 0;
+        }
+
+        /* Imagen de fondo para dispositivos móviles */
+        @media (max-width: 480px) {
+            .background-image {
+                background-image: url('https://imgur.com/DqlHLlM.jpg'); /* Reemplaza con la imagen para móviles */
+                background-attachment: scroll; /* Hace que la imagen se mueva con el contenido */
+            }
         }
 
         .container {
@@ -91,12 +99,6 @@
 
         /* Media Queries para diferentes tamaños de pantalla */
         @media (max-width: 480px) {
-            .background-image {
-                background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-                background-position: center center; /* Centra la imagen para dispositivos móviles */
-                background-attachment: scroll; /* Hace que la imagen se mueva con el contenido */
-            }
-
             .container {
                 padding: 15px;
                 width: 95%;
@@ -114,11 +116,6 @@
         }
 
         @media (max-width: 768px) and (min-width: 481px) {
-            .background-image {
-                background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-                background-position: center center; /* Centra la imagen para pantallas medianas */
-            }
-
             .container {
                 padding: 20px;
                 width: 90%;
