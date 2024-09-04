@@ -91,6 +91,12 @@
 
         /* Media Queries para diferentes tamaños de pantalla */
         @media (max-width: 480px) {
+            .background-image {
+                background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+                background-position: center center; /* Centra la imagen para dispositivos móviles */
+                background-attachment: scroll; /* Hace que la imagen se mueva con el contenido */
+            }
+
             .container {
                 padding: 15px;
                 width: 95%;
@@ -108,6 +114,11 @@
         }
 
         @media (max-width: 768px) and (min-width: 481px) {
+            .background-image {
+                background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+                background-position: center center; /* Centra la imagen para pantallas medianas */
+            }
+
             .container {
                 padding: 20px;
                 width: 90%;
