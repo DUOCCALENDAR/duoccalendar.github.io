@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUOC-CALENDAR</title>
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.js'></script>
@@ -13,71 +14,86 @@
             color: #333;
             margin: 0;
             padding: 0;
-            position: relative; /* Asegura que el contenedor datetime esté posicionado correctamente */
+            position: relative;
         }
+
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1000px; /* Ajusta el ancho máximo del contenedor */
             margin: 20px auto;
             padding: 20px;
-            background-color: #ffffff; /* Fondo del contenedor */
+            background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            position: relative; /* Posiciona el contenedor en relación al body */
+            position: relative;
         }
+
         h1 {
-            color: #ffd700; /* Color del texto del título */
-            background-color: #003366; /* Color de fondo azul marino */
+            color: #ffd700;
+            background-color: #003366;
             padding: 10px;
             text-align: center;
-            border-radius: 5px; /* Opcional: radio de los bordes del fondo del título */
+            border-radius: 5px;
+            font-size: 1.5em;
         }
+
         .logo {
             display: block;
             margin: 0 auto 20px;
-            width: 250px;
+            width: 200px; /* Ajusta el ancho del logo */
         }
+
         .video-link {
             color: #007bff;
             text-decoration: none;
         }
+
         .video-link:hover {
             text-decoration: underline;
         }
+
         /* Estilo para el calendario */
         .fc {
             background-color: #003366; /* Fondo general del calendario */
         }
+
         .fc-daygrid-day {
             background-color: #ffffff; /* Fondo blanco de los días del calendario */
             border: 2px solid #003366; /* Línea azul marino alrededor de los días */
             color: #003366; /* Color del texto de los días del calendario */
         }
+
         .fc-daygrid-day-number {
             color: #ffd700; /* Color del número del día en amarillo */
         }
+
         .fc-daygrid-day-top {
             background-color: #003366; /* Fondo de los encabezados de los días */
             color: #ffd700; /* Color del texto de los encabezados de los días */
             font-weight: bold;
         }
+
         .fc-daygrid-day-top .fc-daygrid-day-number {
             color: #ffffff; /* Color del número del día de los encabezados */
         }
+
         .fc-toolbar {
             display: flex;
             flex-direction: column; /* Asegura que los botones de navegación estén debajo del mes */
             align-items: center; /* Centra los elementos dentro de la barra de herramientas */
             margin-bottom: 10px; /* Espacio entre el calendario y la barra de navegación */
         }
+
         .fc-toolbar-title {
             background-color: #003366; /* Color de fondo para el mes y año */
             color: #ffd700; /* Color del texto para el mes y año */
             text-align: center; /* Asegura que el texto esté centrado */
             padding: 5px; /* Espacio alrededor del texto */
             border-radius: 5px; /* Radio de los bordes del fondo del título */
-            font-size: 1.5em; /* Tamaño de fuente para el mes y año */
+            font-size: 1.2em; /* Tamaño de fuente para el mes y año */
             text-transform: capitalize; /* Capitaliza la primera letra del mes */
         }
+
         .fc-prev-button, .fc-next-button, .fc-today-button {
             background-color: #000000; /* Fondo de los botones de navegación y "Hoy" */
             color: #ffd700; /* Color del texto de los botones de navegación y "Hoy" */
@@ -86,23 +102,28 @@
             padding: 5px 10px; /* Espacio interior opcional */
             margin: 0 2px; /* Espacio entre los botones opcionalmente */
         }
+
         .fc-prev-button:hover, .fc-next-button:hover, .fc-today-button:hover {
             background-color: #333333; /* Fondo al pasar el ratón por encima */
         }
+
         /* Estilo para las flechas */
         .fc-prev-button:before, .fc-next-button:before {
             color: #ffd700; /* Color de las flechas de navegación */
         }
+
         /* Cambia el color de los días de la semana (Lun, Mar, Mié, Jue, Vie, Sab, Dom) */
         .fc-col-header-cell-cushion {
             color: #ffffff; /* Color del texto de los días de la semana */
         }
+
         /* Estilo para el mensaje centrado */
         .calendar-message {
             text-align: center;
             font-weight: bold;
             margin-bottom: 20px; /* Espacio debajo del mensaje */
         }
+
         /* Estilo para eventos importantes */
         .fc-event {
             text-align: center;
@@ -113,26 +134,34 @@
             border-radius: 5px; /* Bordes redondeados opcionalmente */
             padding: 5px 10px; /* Espacio interno dentro del evento */
             margin-bottom: 2px; /* Espacio adicional en la parte inferior de los eventos */
+            overflow: hidden; /* Asegura que el contenido no se desborde */
+            white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
+            text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
         }
+
         /* Estilo específico para eventos con la clase 'holiday' */
         .fc-event.holiday {
             background-color: #ff6347; /* Color de fondo rojo para los eventos 'Feriado' */
             color: #ffffff !important; /* Color del texto de los eventos 'Feriado' en blanco */
         }
+
         /* Personaliza el contenido de los eventos */
         .fc-event-content {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .fc-event-time {
             font-size: 0.8em; /* Tamaño de fuente más pequeño para el tiempo */
             color: #ffffff; /* Color del texto del tiempo */
         }
+
         /* Ajusta la posición vertical de los eventos */
         .fc-daygrid-day-events {
             margin-top: 10px; /* Espacio adicional en la parte superior de los eventos */
         }
+
         /* Estilo para la fecha y hora */
         .datetime {
             position: absolute;
@@ -145,6 +174,63 @@
             font-size: 1em; /* Tamaño de fuente */
             font-weight: bold; /* Texto en negrita */
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+        }
+
+        /* Media Queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.2em;
+            }
+
+            .logo {
+                width: 150px;
+            }
+
+            .fc-toolbar-title {
+                font-size: 1em;
+            }
+
+            .fc-event {
+                font-size: 0.8em;
+                padding: 5px 8px;
+            }
+
+            .datetime {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1em;
+            }
+
+            .logo {
+                width: 120px;
+            }
+
+            .fc-toolbar-title {
+                font-size: 0.9em;
+            }
+
+            .fc-event {
+                font-size: 0.7em;
+                padding: 5px 5px;
+            }
+
+            .datetime {
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
@@ -161,7 +247,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                locale: 'es',  // Configura el idioma a español
+                locale: 'es',
                 initialView: 'dayGridMonth',
                 validRange: {
                     start: '2024-01-01',
@@ -171,14 +257,14 @@
                     {
                         title: 'Inscripción de Asignaturas',
                         start: '2024-07-31',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8'  // Enlace al video tutorial
+                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8'
                     },
                     {
                         title: 'Suspensión Académica',
                         start: '2024-07-25',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',  // Enlace al video tutorial
+                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
                         extendedProps: {
-                            additionalInfo: 'Desde el 25/07 hasta el 24/08'  // Información adicional
+                            additionalInfo: 'Desde el 25/07 hasta el 24/08'
                         }
                     },
                     {
@@ -188,9 +274,9 @@
                     {
                         title: 'Retiro de Asignaturas',
                         start: '2024-08-12',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',  // Enlace al video tutorial
+                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
                         extendedProps: {
-                            additionalInfo: 'Desde el 12/08 hasta el 14/09'  // Información adicional
+                            additionalInfo: 'Desde el 12/08 hasta el 14/09'
                         }
                     },
                     {
@@ -201,49 +287,48 @@
                     {
                         title: 'Suspensión Académica',
                         start: '2024-08-24',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',  // Enlace al video tutorial
+                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
                         extendedProps: {
-                            additionalInfo: 'Vence plazo Suspensión'  // Información adicional
+                            additionalInfo: 'Vence plazo Suspensión'
                         }
                     },
                     {
                         title: 'Retiro de Asignaturas',
                         start: '2024-09-14',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',  // Enlace al video tutorial
+                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
                         extendedProps: {
-                            additionalInfo: 'Vence plazo Retiro'  // Información adicional
+                            additionalInfo: 'Vence plazo Retiro'
                         }
                     },
                     {
                         title: 'Media jornada de clases',
                         start: '2024-09-17',
                         extendedProps: {
-                            additionalInfo: 'Retiro a las 13:00'  // Información adicional
+                            additionalInfo: 'Retiro a las 13:00'
                         }
                     },
                     {
                         title: 'Feriado',
                         start: '2024-09-18',
-                        className: 'holiday'  // Aplica la clase 'holiday'
+                        className: 'holiday'
                     },
                     {
                         title: 'Feriado',
                         start: '2024-09-19',
-                        className: 'holiday'  // Aplica la clase 'holiday'
+                        className: 'holiday'
                     },
                     {
                         title: 'Feriado',
                         start: '2024-09-20',
-                        className: 'holiday'  // Aplica la clase 'holiday'
+                        className: 'holiday'
                     },
                     {
                         title: 'Feriado',
                         start: '2024-09-21',
-                        className: 'holiday'  // Aplica la clase 'holiday'
+                        className: 'holiday'
                     }
                 ],
                 eventContent: function(arg) {
-                    // Personaliza el contenido del evento
                     let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
                     if (arg.event.extendedProps.additionalInfo) {
                         eventInfo += `<div class="fc-event-time">${arg.event.extendedProps.additionalInfo}</div>`;
@@ -252,19 +337,21 @@
                 },
                 eventClick: function(info) {
                     if (info.event.url) {
-                        window.open(info.event.url, '_blank'); // Abre el enlace del evento en una nueva pestaña
-                        info.jsEvent.preventDefault(); // Previene la acción predeterminada del clic
+                        window.open(info.event.url, '_blank');
+                        info.jsEvent.preventDefault();
                     }
                 },
                 headerToolbar: {
                     left: '',
                     center: 'title',
                     right: 'prev,next today'
+                },
+                windowResize: function(view) {
+                    calendar.updateSize(); // Asegura que el calendario se ajuste al redimensionar la ventana
                 }
             });
             calendar.render();
 
-            // Función para actualizar la fecha y hora
             function updateDateTime() {
                 var now = new Date();
                 var options = {
@@ -281,8 +368,8 @@
                 document.getElementById('datetime').textContent = datetimeString;
             }
 
-            updateDateTime(); // Inicializa la fecha y hora
-            setInterval(updateDateTime, 1000); // Actualiza cada segundo
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
         });
     </script>
 </body>
