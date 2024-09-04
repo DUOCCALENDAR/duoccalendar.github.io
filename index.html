@@ -18,14 +18,16 @@
             overflow: hidden; /* Asegura que no haya desplazamiento si la imagen es más grande */
         }
 
-        /* Logo para móviles */
+        /* Logo centrado en la parte superior */
         .mobile-logo {
             display: block;
             width: 100%;
-            max-width: 300px; /* Ajusta el tamaño máximo del logo */
+            max-width: 250px; /* Tamaño máximo del logo para pantallas normales */
             margin: 0 auto;
             position: absolute;
             top: 20px; /* Espacio desde la parte superior del contenedor */
+            left: 50%;
+            transform: translateX(-50%); /* Centra el logo horizontalmente */
             z-index: 1;
         }
 
@@ -120,10 +122,18 @@
                 font-size: 17px;
             }
         }
+
+        /* Ajuste para orientación horizontal en dispositivos móviles */
+        @media (max-width: 480px) and (orientation: landscape) {
+            .mobile-logo {
+                max-width: 200px; /* Ajusta el tamaño máximo del logo en orientación horizontal */
+                top: 10px; /* Ajusta el espacio desde la parte superior del contenedor */
+            }
+        }
     </style>
 </head>
 <body>
-    <img src="https://imgur.com/x5w8eTF.jpg" alt="Logo" class="mobile-logo"/> <!-- Logo para móviles -->
+    <img src="https://imgur.com/x5w8eTF.jpg" alt="Logo" class="mobile-logo"/> <!-- Logo centrado arriba del contenedor -->
    
     <div class="container">
         <div id="datetime" class="datetime"></div> <!-- Elemento para mostrar la fecha y la hora -->
