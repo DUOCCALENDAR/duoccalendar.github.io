@@ -13,14 +13,29 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: #0a0909; /* Fondo blanco general */
+            background: #ffffff; /* Fondo blanco general */
             position: relative;
             overflow: hidden; /* Asegura que no haya desplazamiento si la imagen es más grande */
         }
 
+        /* Imagen de fondo para pantallas grandes */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://imgur.com/dCAcrvR.jpg'); /* Imagen de fondo para pantallas normales */
+            background-size: cover; /* Ajusta la imagen para cubrir el contenedor */
+            background-position: center center; /* Centra la imagen */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Mantiene la imagen fija durante el desplazamiento */
+            z-index: 0;
+        }
+
         /* Logo centrado en la parte superior */
         .mobile-logo {
-            display: block;
+            display: none; /* Oculto por defecto, solo visible en dispositivos móviles */
             width: 100%;
             max-width: 250px; /* Tamaño máximo del logo para pantallas normales */
             margin: 0 auto;
@@ -90,6 +105,12 @@
 
         /* Media Queries para diferentes tamaños de pantalla */
         @media (max-width: 480px) {
+            .background-image {
+                display: none; /* Oculta la imagen de fondo en dispositivos móviles */
+            }
+            .mobile-logo {
+                display: block; /* Muestra el logo en dispositivos móviles */
+            }
             .container {
                 padding: 15px;
                 width: 95%;
@@ -133,7 +154,8 @@
     </style>
 </head>
 <body>
-    <img src="https://imgur.com/x5w8eTF.jpg" alt="Logo" class="mobile-logo"/> <!-- Logo centrado arriba del contenedor -->
+    <div class="background-image"></div> <!-- Imagen de fondo para pantallas normales -->
+    <img src="https://imgur.com/x5w8eTF.jpg" alt="Logo" class="mobile-logo"/> <!-- Logo para móviles -->
    
     <div class="container">
         <div id="datetime" class="datetime"></div> <!-- Elemento para mostrar la fecha y la hora -->
