@@ -137,9 +137,8 @@
             box-sizing: border-box;
             white-space: normal;
             overflow: hidden;
-            text-overflow: clip; /* Cambiado a clip para evitar puntos suspensivos en eventos de una sola línea */
+            text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
             width: 100%;
-            max-width: 160px; /* Asegura que el evento no sea demasiado ancho en pantallas grandes */
         }
 
         .fc-event.holiday {
@@ -198,7 +197,6 @@
             .fc-event {
                 font-size: 0.8em;
                 padding: 5px 8px;
-                max-width: 140px;
             }
 
             .datetime {
@@ -226,8 +224,8 @@
 
             .fc-event {
                 font-size: 0.7em;
-                padding: 5px 5px;
-                max-width: 120px; /* Asegura que el título del evento sea más accesible en pantallas pequeñas */
+                padding: 4px 6px;
+                max-width: 100%; /* Asegura que el título del evento use todo el espacio disponible */
             }
 
             .datetime {
