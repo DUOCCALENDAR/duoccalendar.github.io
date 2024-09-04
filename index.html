@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta viewport añadido -->
     <title>Página de Bienvenida DUOC-CALENDAR</title>
     <style>
         body {
@@ -32,14 +33,14 @@
             text-align: center;
             background-color: rgba(248, 247, 244, 0.8);
             color: #ffd700;
-            padding: 30px;
+            padding: 20px; /* Ajustado para mejor adaptación */
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             width: 90%;
             max-width: 600px;
             position: relative; /* Posiciona el contenedor en relación al body */
             z-index: 1; /* Asegura que el contenedor esté encima de la imagen de fondo */
-            margin-top: -30px; /* Ajusta el espacio desde el borde superior para subir el contenedor */
+            margin: 20px; /* Ajustado para mejor adaptación */
         }
         h1 {
             background-color: #010509;
@@ -78,6 +79,41 @@
             background-color: #010509;
             padding: 10px;
             border-radius: 5px;
+        }
+
+        /* Media Queries para diferentes tamaños de pantalla */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+                width: 95%;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .access-link {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+            .instruction, .datetime {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) and (min-width: 481px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+            h1 {
+                font-size: 1.75em;
+            }
+            .access-link {
+                padding: 12px 22px;
+                font-size: 17px;
+            }
+            .instruction, .datetime {
+                font-size: 17px;
+            }
         }
     </style>
 </head>
