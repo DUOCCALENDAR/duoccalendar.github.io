@@ -17,6 +17,16 @@
             position: relative;
         }
 
+        .logo-container {
+            background-color: #000000; /* Fondo negro */
+            padding: 10px 0; /* Espacio arriba y abajo del logo */
+            text-align: center; /* Centra el logo horizontalmente */
+        }
+
+        .logo {
+            width: 350px; /* Tamaño del logo */
+        }
+
         .container {
             width: 90%;
             max-width: 1000px;
@@ -27,11 +37,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             position: relative;
             text-align: center;
-        }
-
-        .logo {
-            width: 350px;
-            margin-bottom: 10px;
         }
 
         .datetime {
@@ -231,8 +236,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="logo-container">
         <img src="https://imgur.com/sKjD4Ql.png" alt="Logo" class="logo"/>
+    </div>
+    <div class="container">
         <div id="datetime" class="datetime"></div>
         <h1>DUOC-CALENDAR</h1>
         <p class="calendar-message">Puedes ver las fechas importantes y hacer clic en el evento habilitado para ver el video tutorial del proceso.</p>
