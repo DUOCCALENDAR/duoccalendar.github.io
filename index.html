@@ -33,14 +33,22 @@
 
         /* Imagen por defecto para pantallas más grandes */
         .background-image.default {
-            background-image: url('https://imgur.com/DqlHLlM.jpg'); /* Imagen por defecto */
+            background-image: url('https://imgur.com/DqlHLlM.jpg'); /* Imagen para PC o notebook */
         }
 
-        /* Imagen de fondo para dispositivos móviles */
+        /* Imagen de fondo como logo para dispositivos móviles */
         @media (max-width: 480px) {
             .background-image.default {
-                background-image: url('https://imgur.com/wtzlnrZ.jpg'); /* Reemplaza con la imagen para móviles */
-                background-attachment: scroll; /* Hace que la imagen se mueva con el contenido */
+                background: none; /* Elimina la imagen de fondo para móviles */
+            }
+            .mobile-logo {
+                display: block;
+                width: 100%;
+                max-width: 150px; /* Ajusta el tamaño máximo del logo */
+                margin: 0 auto;
+                position: absolute;
+                top: 10px; /* Espacio desde la parte superior del contenedor */
+                z-index: 1;
             }
         }
 
@@ -139,6 +147,7 @@
 </head>
 <body>
     <div class="background-image default"></div>
+    <img src="https://imgur.com/x5w8eTF.jpg" alt="Logo" class="mobile-logo"/> <!-- Logo para móviles -->
    
     <div class="container">
         <div id="datetime" class="datetime"></div> <!-- Elemento para mostrar la fecha y la hora -->
