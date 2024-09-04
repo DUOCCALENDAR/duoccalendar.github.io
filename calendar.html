@@ -128,11 +128,11 @@
             justify-content: center;
             text-align: center;
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 0.8em; /* Reducido el tamaño de fuente para dispositivos móviles */
             background-color: #28a745;
             color: #ffffff !important;
             border-radius: 5px;
-            padding: 5px;
+            padding: 5px 8px;
             margin-bottom: 2px;
             box-sizing: border-box;
             white-space: normal;
@@ -154,7 +154,7 @@
         }
 
         .fc-event-time {
-            font-size: 0.8em;
+            font-size: 0.7em; /* Reducido el tamaño de fuente para la información adicional */
             color: #ffffff;
         }
 
@@ -195,8 +195,8 @@
             }
 
             .fc-event {
-                font-size: 0.8em;
-                padding: 5px 8px;
+                font-size: 0.7em; /* Ajuste adicional para dispositivos móviles */
+                padding: 4px 6px;
             }
 
             .datetime {
@@ -223,8 +223,8 @@
             }
 
             .fc-event {
-                font-size: 0.7em;
-                padding: 4px 6px;
+                font-size: 0.6em; /* Ajuste adicional para dispositivos móviles más pequeños */
+                padding: 3px 5px;
                 max-width: 100%; /* Asegura que el título del evento use todo el espacio disponible */
             }
 
@@ -297,21 +297,59 @@
                         start: '2024-09-14',
                         url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
                         extendedProps: {
-                            additionalInfo: 'Desde el 14/09 hasta el 15/10'
+                            additionalInfo: 'Vence plazo Retiro'
                         }
+                    },
+                    {
+                        title: 'Media jornada de clases',
+                        start: '2024-09-17',
+                        extendedProps: {
+                            additionalInfo: 'Retiro a las 13:00'
+                        }
+                    },
+                    {
+                        title: 'Feriado',
+                        start: '2024-09-18',
+                        className: 'holiday'
+                    },
+                    {
+                        title: 'Feriado',
+                        start: '2024-09-19',
+                        className: 'holiday'
+                    },
+                    {
+                        title: 'Feriado',
+                        start: '2024-09-20',
+                        className: 'holiday'
+                    },
+                    {
+                        title: 'Feriado',
+                        start: '2024-09-21',
+                        className: 'holiday'
                     }
                 ],
+                eventContent: function(arg) {
+                    let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
+                    if (arg.event.extendedProps.additionalInfo) {
+                        eventInfo += `<div class="fc-event-time">${arg.event.extendedProps.additionalInfo}</div>`;
+                    }
+                    return { html: eventInfo };
+                },
                 eventClick: function(info) {
                     if (info.event.url) {
                         window.open(info.event.url, '_blank');
-                        info.jsEvent.preventDefault(); // Avoid redirecting if the event has a URL
+                        info.jsEvent.preventDefault();
                     }
+                },
+                headerToolbar: {
+                    left: '',
+                    center: 'title',
+                    right: 'prev,next today'
                 }
             });
 
             calendar.render();
 
-            // Display current date and time
             function updateDateTime() {
                 const now = new Date();
                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
