@@ -153,12 +153,25 @@
         }
 
         .fc-event-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
 
+        .fc-event-details{
+            text-align: left;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
+
+        .fc-event-details ul {
+
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+         .fc-event-details li {
+
+            margin-bottom: 3px;
+        }
+        
         .fc-event-time {
             font-size: 0.75em;
             color: #ffffff;
@@ -269,12 +282,14 @@
                         title: 'Vence Plazo para los siguientes eventos:',
                         start: '2024-08-31',
                         extendedProps: {
-                            additionalInfo: [
-                                '-Admisión Especial y Movimientos Internos.',
-                                '-Matricula de Estudiantes de Continuidad.',
-                                '-Reincorporaciones y Reintegros.',
-                                '-Período Extraordinario de Inscripción de Asignaturas.'
-                            ]
+                            additionalInfo: `
+                                <ul>
+                                <li>-Admisión Especial y Movimientos Internos.</li>
+                                <li>-Matrícula de Estudiantes de Continuidad.</li>
+                                <li>-Reincorporaciones y Reintegros.</li>
+                                <li>-Período Extraordinario de Inscripción de Asignaturas.</li>
+                                </ul>
+                            `
                         }
                     },
                     {
@@ -459,7 +474,7 @@
                 eventContent: function(arg) {
                     let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
                     if (arg.event.extendedProps.additionalInfo) {
-                        eventInfo += `<div class="fc-event-time">${arg.event.extendedProps.additionalInfo}</div>`;
+                        eventInfo += `<div class="fc-event-details">${arg.event.extendedProps.additionalInfo}</div>`;
                     }
                     return { html: eventInfo };
                 },
