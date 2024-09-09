@@ -156,31 +156,30 @@
             text-align: center;
         }
 
-        .fc-event-details{
+        .fc-event-details {
             text-align: left;
-            margin-top: 5px;
-            padding-left: 10px;
-            font-size: 0.8em;
+            margin-top: 2px;
+            padding-left: 5px;
+            font-size: 0.7em;
+            line-height: 1.2;
         }
 
         .fc-event-details ul {
-
             list-style-type: disc;
             padding-left: 20px;
         }
-         .fc-event-details li {
 
+        .fc-event-details li {
             margin-bottom: 3px;
         }
-        
-        .fc-event-time {
-            font-size: 0.75em;
-            color: #ffffff;
-            margin-top: 2px;
+
+        .fc-event-content a {
+            color: #ffd700;
+            text-decoration: none;
         }
 
-        .fc-daygrid-day-events {
-            margin-top: 10px;
+        .fc-event-content a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -273,7 +272,7 @@
                 },
                 events: [
                     {
-                        title: 'Inicio Matricula para Estudiantes de Continuidad',
+                        title: 'Inicio Matrícula para Estudiantes de Continuidad',
                         start: '2024-07-01',
                         extendedProps: {
                             additionalInfo: 'Desde el 01/07 hasta el 31/08'
@@ -285,10 +284,10 @@
                         extendedProps: {
                             additionalInfo: `
                                 <ul>
-                                <li>Admisión Especial y Movimientos Internos.</li>
-                                <li>Matrícula de Estudiantes de Continuidad.</li>
-                                <li>Reincorporaciones y Reintegros.</li>
-                                <li>Período Extraordinario de Inscripción de Asignaturas.</li>
+                                    <li>Admisión Especial y Movimientos Internos.</li>
+                                    <li>Matrícula de Estudiantes de Continuidad.</li>
+                                    <li>Reincorporaciones y Reintegros.</li>
+                                    <li>Período Extraordinario de Inscripción de Asignaturas.</li>
                                 </ul>
                             `
                         }
@@ -339,9 +338,11 @@
                         }
                     },
                     {
-                        title: 'Vence Plazo Modificación de Carga Académica',
+                        title: 'Modificación de Carga Académica',
                         start: '2024-08-24',
-                     
+                        extendedProps: {
+                            additionalInfo: 'Vence plazo para Modificación de Carga Académica'
+                        }
                     },
                     {
                         title: 'Inicio Período Extraordinario de Inscripción de Asignaturas',
@@ -364,16 +365,20 @@
                         className: 'holiday'
                     },
                     {
-                        title: 'Vence Plazo Suspensión Académica',
+                        title: 'Suspensión Académica',
                         start: '2024-08-24',
                         url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
-                    
+                        extendedProps: {
+                            additionalInfo: 'Vence plazo Suspensión'
+                        }
                     },
                     {
-                        title: 'Vence Plazo Retiro de Asignaturas',
+                        title: 'Retiro de Asignaturas',
                         start: '2024-09-14',
                         url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
-                     
+                        extendedProps: {
+                            additionalInfo: 'Vence plazo Retiro'
+                        }
                     },
                     {
                         title: 'Feriado Fiestas Patrias',
@@ -418,9 +423,11 @@
                         }
                     },
                     {
-                        title: 'Vence Plazo Encuesta Docente',
+                        title: 'Encuesta Docente',
                         start: '2024-11-16',
-                      
+                        extendedProps: {
+                            additionalInfo: 'Vence plazo Encuesta Docente'
+                        }
                     },
                     {
                         title: 'Inicio Período Solicitud de Nota Pendiente',
@@ -430,9 +437,11 @@
                         }
                     },
                     {
-                        title: 'Vence Plazo Solicitud de Nota Pendiente',
+                        title: 'Período Solicitud de Nota Pendiente',
                         start: '2024-12-20',
-                       
+                        extendedProps: {
+                            additionalInfo: 'Vence plazo Solicitud Nota Pendiente'
+                        }
                     },
                     {
                         title: 'Publicación Reprobados por Inasistencia',
@@ -446,9 +455,11 @@
                         }
                     },
                     {
-                        title: 'Termina el Período de Exámenes',
+                        title: 'Período de Exámenes',
                         start: '2024-12-23',
-                      
+                        extendedProps: {
+                            additionalInfo: 'Término de Período de Exámenes'
+                        }
                     },
                     {
                         title: 'Cierre Académico y Término de Semestre',
