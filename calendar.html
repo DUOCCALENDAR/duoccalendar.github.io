@@ -9,8 +9,8 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales/es.js'></script>
     <style>
         body {
-            font-family: Arial, sans-serif;/* Formato de letra */
-            background-color: #1c2833;/* Fondo azul */
+            font-family: Arial, sans-serif;
+            background-color: #1c2833;
             color: #333;
             margin: 0;
             padding: 0;
@@ -18,13 +18,13 @@
         }
 
         .logo-container {
-            background-color: #f2f3f4; /* Fondo blanco */
-            padding: 10px 0; /* Espacio arriba y abajo del logo */
-            text-align: center; /* Centra el logo horizontalmente */
+            background-color: #f2f3f4;
+            padding: 10px 0;
+            text-align: center;
         }
 
         .logo {
-            width: 400px; /* Tamaño del logo */
+            width: 400px;
         }
 
         .container {
@@ -136,7 +136,7 @@
             background-color: #28a745;
             color: #ffffff !important;
             border-radius: 5px;
-            padding: 5px 8px; /* Ajustar padding para que el texto no se desborde */
+            padding: 5px 8px;
             margin-bottom: 2px;
             box-sizing: border-box;
             white-space: normal;
@@ -167,7 +167,6 @@
             margin-top: 10px;
         }
 
-        /* Media Queries para dispositivos móviles */
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -192,12 +191,12 @@
             }
 
             .fc-event {
-                font-size: 0.85em; /* Ajustar tamaño de fuente */
-                padding: 5px 10px; /* Ajustar padding */
+                font-size: 0.85em;
+                padding: 5px 10px;
             }
 
             .fc-event-time {
-                font-size: 0.7em; /* Ajustar tamaño de fuente */
+                font-size: 0.7em;
             }
         }
 
@@ -225,12 +224,12 @@
             }
 
             .fc-event {
-                font-size: 0.75em; /* Ajustar tamaño de fuente */
-                padding: 4px 8px; /* Ajustar padding */
+                font-size: 0.75em;
+                padding: 4px 8px;
             }
 
             .fc-event-time {
-                font-size: 0.65em; /* Ajustar tamaño de fuente */
+                font-size: 0.65em;
             }
         }
     </style>
@@ -257,251 +256,75 @@
                     end: '2024-12-31'
                 },
                 events: [
-                    {
-                        title: 'Inicio Matricula para Estudiantes de Continuidad',
-                        start: '2024-07-01',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 01/07 hasta el 31/08'
-                        }
-                        
-                    },
-                    {
-                        title: 'Vence Plazo para los siguientes eventos:',
-                        start: '2024-08-31',
-                        extendedProps: {
-                            additionalInfo: [
-                                '-Admisión Especial y Movimientos Internos',
-                                '-Matricula de Estudiantes de Continuidad',
-                                '-Reincorporaciones y Reintegros',
-                                '-Período Extraordinario de Inscripción de Asignaturas'
-                            ]
-                        }
-                        
-                    },
-                    {
-                        title: 'Inicio Reincorporaciones y Reintegros',
-                        start: '2024-07-01',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 01/07 hasta el 31/08'
-                        }
-                        
-                    },
-            
-                    {
-                        title: 'Misiones Solidarias',
-                        start: '2024-07-24',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 24/07 hasta el 01/08'
-                        }
-                    },
-                     {
-                        title: 'Inicio Admisión Especial y Movimientos Internos',
-                        start: '2024-07-27',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 27/07 hasta el 31/08'
-                        }
-                        
-                    },
-            
-                    {
-                        title: 'Inscripción de Asignaturas',
-                        start: '2024-07-31',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8'
-                    },
-                    {
-                        title: 'Suspensión Académica',
-                        start: '2024-07-25',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 25/07 hasta el 24/08'
-                        }
-                    },
-                    {
-                        title: 'Inicio de Clases',
-                        start: '2024-08-12'
-                    },
-                    {
-                        title: 'Inicio Modificación de Carga Académica',
-                        start: '2024-08-02',
-                        
-                        extendedProps: {
-                            additionalInfo: 'Desde el 02/08 hasta el 24/08'
-                        }
-                    },
-                    {
-                        title: 'Modificación de Carga Académica',
-                        start: '2024-08-24',
-                        
-                        extendedProps: {
-                            additionalInfo: 'Vence plazo para Modificación de Carga Académica'
-                        }
-                    },
-                    {
-                        title: 'Inicio Período Extraordinario de Inscripción de Asignaturas',
-                        start: '2024-08-02',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 02/08 hasta el 31/08'
-                        }
-                    },
-                
-                    
-                    {
-                        title: 'Retiro de Asignaturas',
-                        start: '2024-08-12',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 12/08 hasta el 14/09'
-                        }
-                    },
-                    {
-                        title: 'Feriado',
-                        start: '2024-08-15',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Suspensión Académica',
-                        start: '2024-08-24',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
-                        extendedProps: {
-                            additionalInfo: 'Vence plazo Suspensión'
-                        }
-                    },
-                    {
-                        title: 'Retiro de Asignaturas',
-                        start: '2024-09-14',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
-                        extendedProps: {
-                            additionalInfo: 'Vence plazo Retiro'
-                        }
-                    },
-                    {
-                        title: 'Feriado Fiestas Patrias',
-                        start: '2024-09-18',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Fiestas Patrias',
-                        start: '2024-09-19',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Fiestas Patrias',
-                        start: '2024-09-20',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Fiestas Patrias',
-                        start: '2024-09-21',
-                        className: 'holiday'
-                    },
-                     {
-                        title: 'Feriado Encuentro de Dos Mundos',
-                        start: '2024-10-12',
-                        className: 'holiday'
-                    },
-                     {
-                        title: 'Feriado Iglesias Evangélicas y Protestantes',
-                        start: '2024-10-31',
-                        className: 'holiday'
-                    },
-                     {
-                        title: 'Feriado Todos los Santos',
-                        start: '2024-11-01',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Inicio Encuesta Docente',
-                        start: '2024-10-28',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 28/10 hasta el 16/11'
-                        }
-                    },
-                    {
-                        title: 'Encuesta Docente',
-                        start: '2024-11-16',
-                        extendedProps: {
-                            additionalInfo: 'Vence plazo Encuesta Docente'
-                        }
-                    },
-                    {
-                        title: 'Inicio Período Solicitud de Nota Pendiente',
-                        start: '2024-11-11',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 11/11 hasta el 20/12'
-                        }
-                    },
-                    {
-                        title: 'Período Solicitud de Nota Pendiente',
-                        start: '2024-12-20',
-                        extendedProps: {
-                            additionalInfo: 'Vence plazo Solicitud Nota Pendiente'
-                        }
-                    },
-                    {
-                        title: 'Publicación Reprobados por Inasistencia',
-                        start: '2024-11-30',
-                       
-                    },
-                    {
-                        title: 'Inicio Período de Exámenes',
-                        start: '2024-12-09',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 09/12 hasta el 23/12'
-                        }
-                    },
-                    {
-                        title: 'Período de Exámenes',
-                        start: '2024-12-23',
-                        extendedProps: {
-                            additionalInfo: 'Termino de Período de Exámenes'
-                        }
-                    },
-                    {
-                        title: 'Cierre Académico y Término de Semestre',
-                        start: '2024-12-24',
-                      
-                        
-                    },
-                    {
-                        title: 'Feriado Día de Navidad',
-                        start: '2024-12-25',
-                        className: 'holiday'
-                    },
+                    { title: 'Inicio Matricula para Estudiantes de Continuidad', start: '2024-07-01', extendedProps: { additionalInfo: 'Desde el 01/07 hasta el 31/08' }},
+                    { title: 'Vence Plazo para los siguientes eventos:', start: '2024-08-31', extendedProps: { additionalInfo: ['-Admisión Especial y Movimientos Internos.', '-Matricula de Estudiantes de Continuidad.', '-Reincorporaciones y Reintegros.', '-Período Extraordinario de Inscripción de Asignaturas.'] }},
+                    { title: 'Inicio Reincorporaciones y Reintegros', start: '2024-07-01', extendedProps: { additionalInfo: 'Desde el 01/07 hasta el 31/08' }},
+                    { title: 'Misiones Solidarias', start: '2024-07-24', extendedProps: { additionalInfo: 'Desde el 24/07 hasta el 01/08' }},
+                    { title: 'Inicio Admisión Especial y Movimientos Internos', start: '2024-07-27', extendedProps: { additionalInfo: 'Desde el 27/07 hasta el 31/08' }},
+                    { title: 'Inscripción de Asignaturas', start: '2024-07-31', url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8' }},
+                    { title: 'Suspensión Académica', start: '2024-07-25', url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8', extendedProps: { additionalInfo: 'Desde el 25/07 hasta el 24/08' }},
+                    { title: 'Inicio de Clases', start: '2024-08-12' },
+                    { title: 'Inicio Modificación de Carga Académica', start: '2024-08-02', extendedProps: { additionalInfo: 'Desde el 02/08 hasta el 24/08' }},
+                    { title: 'Modificación de Carga Académica', start: '2024-08-24', extendedProps: { additionalInfo: 'Vence plazo para Modificación de Carga Académica' }},
+                    { title: 'Inicio Período Extraordinario de Inscripción de Asignaturas', start: '2024-08-02', extendedProps: { additionalInfo: 'Desde el 02/08 hasta el 31/08' }},
+                    { title: 'Retiro de Asignaturas', start: '2024-08-12', url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8', extendedProps: { additionalInfo: 'Desde el 12/08 hasta el 14/09' }},
+                    { title: 'Feriado', start: '2024-08-15', className: 'holiday' },
+                    { title: 'Suspensión Académica', start: '2024-08-24', url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8', extendedProps: { additionalInfo: 'Vence plazo Suspensión' }},
+                    { title: 'Retiro de Asignaturas', start: '2024-09-14', url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8', extendedProps: { additionalInfo: 'Vence plazo Retiro' }},
+                    { title: 'Feriado Fiestas Patrias', start: '2024-09-18', className: 'holiday' },
+                    { title: 'Feriado Fiestas Patrias', start: '2024-09-19', className: 'holiday' },
+                    { title: 'Feriado Fiestas Patrias', start: '2024-09-20', className: 'holiday' },
+                    { title: 'Feriado Fiestas Patrias', start: '2024-09-21', className: 'holiday' },
+                    { title: 'Feriado Encuentro de Dos Mundos', start: '2024-10-12', className: 'holiday' },
+                    { title: 'Feriado Iglesias Evangélicas y Protestantes', start: '2024-10-31', className: 'holiday' },
+                    { title: 'Feriado Todos los Santos', start: '2024-11-01', className: 'holiday' },
+                    { title: 'Inicio Encuesta Docente', start: '2024-10-28', extendedProps: { additionalInfo: 'Desde el 28/10 hasta el 16/11' }},
+                    { title: 'Encuesta Docente', start: '2024-11-16', extendedProps: { additionalInfo: 'Vence plazo Encuesta Docente' }},
+                    { title: 'Inicio Período Solicitud de Nota Pendiente', start: '2024-11-11', extendedProps: { additionalInfo: 'Desde el 11/11 hasta el 20/12' }},
+                    { title: 'Período Solicitud de Nota Pendiente', start: '2024-12-20', extendedProps: { additionalInfo: 'Vence plazo Solicitud Nota Pendiente' }},
+                    { title: 'Publicación Reprobados por Inasistencia', start: '2024-11-30' },
+                    { title: 'Inicio Período de Exámenes', start: '2024-12-09', extendedProps: { additionalInfo: 'Desde el 09/12 hasta el 23/12' }},
+                    { title: 'Período de Exámenes', start: '2024-12-23', extendedProps: { additionalInfo: 'Termino de Período de Exámenes' }},
+                    { title: 'Cierre Académico y Término de Semestre', start: '2024-12-24' },
+                    { title: 'Feriado Día de Navidad', start: '2024-12-25', className: 'holiday' }
                 ],
                 eventContent: function(arg) {
-            let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
-            if (arg.event.extendedProps.additionalInfo) {
-                eventInfo += '<ul class="fc-event-time">';
-                arg.event.extendedProps.additionalInfo.forEach(info => {
-                    eventInfo += `<li>${info}</li>`;
-                });
-                eventInfo += '</ul>';
-            }
-            return { html: eventInfo };
-        },
-        eventClick: function(info) {
-            if (info.event.url) {
-                window.open(info.event.url, '_blank');
-                info.jsEvent.preventDefault();
-            }
-        },
-        headerToolbar: {
-            left: '',
-            center: 'title',
-            right: 'prev,next today'
-        },
-        views: {
-            dayGridMonth: {
-                titleFormat: { year: 'numeric', month: 'long' }
-            }
-        },
-        eventDidMount: function(info) {
-            // Capitalizar el primer carácter del mes
-            document.querySelectorAll('.fc-toolbar-title').forEach(title => {
-                title.textContent = title.textContent.charAt(0).toUpperCase() + title.textContent.slice(1);
+                    let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
+                    if (arg.event.extendedProps.additionalInfo) {
+                        eventInfo += '<ul class="fc-event-time">';
+                        if (Array.isArray(arg.event.extendedProps.additionalInfo)) {
+                            arg.event.extendedProps.additionalInfo.forEach(info => {
+                                eventInfo += `<li>${info}</li>`;
+                            });
+                        } else {
+                            eventInfo += `<li>${arg.event.extendedProps.additionalInfo}</li>`;
+                        }
+                        eventInfo += '</ul>';
+                    }
+                    return { html: eventInfo };
+                },
+                eventClick: function(info) {
+                    if (info.event.url) {
+                        window.open(info.event.url, '_blank');
+                        info.jsEvent.preventDefault();
+                    }
+                },
+                headerToolbar: {
+                    left: '',
+                    center: 'title',
+                    right: 'prev,next today'
+                },
+                views: {
+                    dayGridMonth: {
+                        titleFormat: { year: 'numeric', month: 'long' }
+                    }
+                },
+                eventDidMount: function(info) {
+                    document.querySelectorAll('.fc-toolbar-title').forEach(title => {
+                        title.textContent = title.textContent.charAt(0).toUpperCase() + title.textContent.slice(1);
+                    });
+                }
             });
-        }
-    });
             calendar.render();
 
             function updateDateTime() {
