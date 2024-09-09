@@ -269,11 +269,12 @@
                         title: 'Vence Plazo para los siguientes eventos:',
                         start: '2024-08-31',
                         extendedProps: {
-                            additionalInfo: '-Admisión Especial y Movimientos Internos',
-                            additionalInfo: '-Matricula de Estudiantes de Continuidad',
-                            additionalInfo: '-Reincorporaciones y Reintegros',
-                            additionalInfo: '-Período Extraordinario de Inscripción de Asignaturas'
-                            
+                            additionalInfo: [
+                                '-Admisión Especial y Movimientos Internos',
+                                '-Matricula de Estudiantes de Continuidad',
+                                '-Reincorporaciones y Reintegros',
+                                '-Período Extraordinario de Inscripción de Asignaturas'
+                            ]
                         }
                         
                     },
@@ -468,24 +469,39 @@
                     },
                 ],
                 eventContent: function(arg) {
-                    let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
-                    if (arg.event.extendedProps.additionalInfo) {
-                        eventInfo += `<div class="fc-event-time">${arg.event.extendedProps.additionalInfo}</div>`;
-                    }
-                    return { html: eventInfo };
-                },
-                eventClick: function(info) {
-                    if (info.event.url) {
-                        window.open(info.event.url, '_blank');
-                        info.jsEvent.preventDefault();
-                    }
-                },
-                headerToolbar: {
-                    left: '',
-                    center: 'title',
-                    right: 'prev,next today'
-                }
+            let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
+            if (arg.event.extendedProps.additionalInfo) {
+                eventInfo += '<ul class="fc-event-time">';
+                arg.event.extendedProps.additionalInfo.forEach(info => {
+                    eventInfo += `<li>${info}</li>`;
+                });
+                eventInfo += '</ul>';
+            }
+            return { html: eventInfo };
+        },
+        eventClick: function(info) {
+            if (info.event.url) {
+                window.open(info.event.url, '_blank');
+                info.jsEvent.preventDefault();
+            }
+        },
+        headerToolbar: {
+            left: '',
+            center: 'title',
+            right: 'prev,next today'
+        },
+        views: {
+            dayGridMonth: {
+                titleFormat: { year: 'numeric', month: 'long' }
+            }
+        },
+        eventDidMount: function(info) {
+            // Capitalizar el primer carácter del mes
+            document.querySelectorAll('.fc-toolbar-title').forEach(title => {
+                title.textContent = title.textContent.charAt(0).toUpperCase() + title.textContent.slice(1);
             });
+        }
+    });
             calendar.render();
 
             function updateDateTime() {
