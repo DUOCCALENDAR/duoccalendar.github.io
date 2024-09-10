@@ -216,7 +216,7 @@
                 padding: 5px 10px;
             }
 
-            .fc-event-time {
+            .fc-event-details {
                 font-size: 0.7em;
             }
 
@@ -250,18 +250,23 @@
             }
 
             .fc-event {
-                font-size: 0.50em; /* Tamaño de fuente más reducido para pantallas pequeñas */
+                font-size: 0.7em; /* Tamaño de fuente más reducido para pantallas pequeñas */
                 padding: 4px 8px;
             }
 
-            .fc-event-time {
-                font-size: 0.65em;
+            .fc-event-details {
+                font-size: 0.6em;
             }
 
             .fc-daygrid-day {
                 padding: 6px;
                 margin: 1px;
             }
+        }
+
+        #calendar {
+            max-width: 100%;
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -492,20 +497,23 @@
                     left: '',
                     center: 'title',
                     right: 'prev,next today'
+                },
+                windowResize: function(view) {
+                    // Re-render the calendar on window resize to ensure responsiveness
+                    calendar.updateSize();
                 }
             });
             calendar.render();
 
-            // Mostrar la fecha y hora actuales
-            var datetimeEl = document.getElementById('datetime');
-            function updateDatetime() {
+            // Update datetime dynamically
+            function updateDateTime() {
                 var now = new Date();
-                var formattedDate = now.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
-                var formattedTime = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
-                datetimeEl.textContent = `Fecha y hora actual: ${formattedDate} ${formattedTime}`;
+                var datetimeStr = now.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }) + ' ' +
+                                  now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                document.getElementById('datetime').textContent = datetimeStr;
             }
-            setInterval(updateDatetime, 1000);
-            updateDatetime();
+            setInterval(updateDateTime, 1000);
+            updateDateTime(); // Initial call
         });
     </script>
 </body>
