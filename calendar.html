@@ -64,9 +64,26 @@
         }
 
         .calendar-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            color: #003366;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             text-align: center;
             font-weight: bold;
-            margin-bottom: 20px;
+            z-index: 1000;
+            width: 80%;
+        }
+
+        .calendar-message img {
+            margin-top: 20px;
+            width: 50%;
+            max-width: 300px;
         }
 
         .fc {
@@ -301,7 +318,10 @@
     <div class="container">
         <div id="datetime" class="datetime"></div>
         <h1>DUOC-CALENDAR</h1>
-        <p class="calendar-message">Para una mejor experiencia, gira tu dispositivo a orientación horizontal.</p>
+        <div class="calendar-message">
+            <p>Para una mejor experiencia, gira tu dispositivo a orientación horizontal.</p>
+            <img src="https://imgur.com/x75UWyN.gif" alt="Girar dispositivo" />
+        </div>
         <div id='calendar'></div>
     </div>
 
@@ -311,32 +331,8 @@
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     locale: 'es',
-                    initialView: window.innerWidth <= 768 ? 'dayGridWeek' : 'dayGridMonth',
-                    validRange: {
-                        start: '2024-01-01',
-                        end: '2024-12-31'
-                    },
+                    initialView: 'dayGridMonth',
                     events: [
-                        {
-                            title: 'Inicio Matrícula para Estudiantes de Continuidad',
-                            start: '2024-07-01',
-                            extendedProps: {
-                                additionalInfo: 'Desde el 01/07 hasta el 31/08.'
-                            }
-                        },
-                        {
-                            title: 'Vence Plazo para:',
-                            start: '2024-08-31',
-                            extendedProps: {
-                                additionalInfo: `
-                                    <ul>
-                                        <li>Admisión Especial y Movimientos Internos.</li>
-                                        <li>Matrícula de Estudiantes de Continuidad.</li>
-                                        <li>Reincorporación.</li>
-                                    </ul>
-                                `
-                            }
-                        },
                         {
                             title: 'Inicio Admisión Especial y Movimientos Internos',
                             start: '2024-07-27',
@@ -547,3 +543,4 @@
     </script>
 </body>
 </html>
+
