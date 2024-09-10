@@ -15,6 +15,7 @@
             margin: 0;
             padding: 0;
             position: relative;
+            overflow-x: hidden; /* Evita el desbordamiento horizontal en el body */
         }
 
         .logo-container {
@@ -24,7 +25,9 @@
         }
 
         .logo {
-            width: 400px;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
         }
 
         .container {
@@ -150,7 +153,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             width: 100%;
-            font-size: 0.9em; /* Tamaño de fuente por defecto */
+            font-size: 0.9em;
         }
 
         .fc-event.holiday {
@@ -166,8 +169,9 @@
             text-align: left;
             margin-top: 2px;
             padding-left: 5px;
-            font-size: 0.7em;
+            font-size: 0.8em;
             line-height: 1.2;
+            overflow-wrap: break-word; /* Asegura que el texto largo se ajuste */
         }
 
         .fc-event-details ul {
@@ -212,7 +216,7 @@
             }
 
             .fc-event {
-                font-size: 0.85em; /* Tamaño de fuente reducido para pantallas medianas */
+                font-size: 0.85em;
                 padding: 5px 10px;
             }
 
@@ -250,7 +254,7 @@
             }
 
             .fc-event {
-                font-size: 0.7em; /* Tamaño de fuente más reducido para pantallas pequeñas */
+                font-size: 0.7em;
                 padding: 4px 8px;
             }
 
@@ -307,24 +311,9 @@
                                 <ul>
                                     <li>Admisión Especial y Movimientos Internos.</li>
                                     <li>Matrícula de Estudiantes de Continuidad.</li>
-                                    <li>Reincorporaciones y Reintegros.</li>
-                                    <li>Período Extraordinario de Inscripción de Asignaturas.</li>
+                                    <li>Reincorporación.</li>
                                 </ul>
                             `
-                        }
-                    },
-                    {
-                        title: 'Inicio Reincorporaciones y Reintegros',
-                        start: '2024-07-01',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 01/07 hasta el 31/08.'
-                        }
-                    },
-                    {
-                        title: 'Misiones Solidarias',
-                        start: '2024-07-24',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 24/07 hasta el 01/08.'
                         }
                     },
                     {
