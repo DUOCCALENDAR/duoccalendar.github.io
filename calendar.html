@@ -149,7 +149,7 @@
             white-space: normal;
             overflow: hidden;
             text-overflow: ellipsis;
-            width: 100%;
+            max-width: 100%;
             font-size: 0.9em; /* Tamaño de fuente por defecto */
         }
 
@@ -214,6 +214,7 @@
             .fc-event {
                 font-size: 0.85em; /* Tamaño de fuente reducido para pantallas medianas */
                 padding: 5px 10px;
+                max-width: 100%;
             }
 
             .fc-event-time {
@@ -252,6 +253,7 @@
             .fc-event {
                 font-size: 0.75em; /* Tamaño de fuente más reducido para pantallas pequeñas */
                 padding: 4px 8px;
+                max-width: 100%;
             }
 
             .fc-event-time {
@@ -282,48 +284,23 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 locale: 'es',
                 initialView: 'dayGridMonth',
-                validRange: {
-                    start: '2024-01-01',
-                    end: '2024-12-31'
-                },
                 events: [
                     {
-                        title: 'Inicio Matrícula para Estudiantes de Continuidad',
+                        title: 'Receso Académico',
                         start: '2024-07-01',
+                        end: '2024-07-26',
+                        className: 'holiday'
+                    },
+                    {
+                        title: 'Período de Regularización Académica',
+                        start: '2024-07-15',
+                        end: '2024-07-27',
                         extendedProps: {
-                            additionalInfo: 'Desde el 01/07 hasta el 31/08.'
+                            additionalInfo: 'Desde el 15/07 hasta el 27/07.'
                         }
                     },
                     {
-                        title: 'Vence Plazo para:',
-                        start: '2024-08-31',
-                        extendedProps: {
-                            additionalInfo: `
-                                <ul>
-                                    <li>Admisión Especial y Movimientos Internos.</li>
-                                    <li>Matrícula de Estudiantes de Continuidad.</li>
-                                    <li>Reincorporaciones y Reintegros.</li>
-                                    <li>Período Extraordinario de Inscripción de Asignaturas.</li>
-                                </ul>
-                            `
-                        }
-                    },
-                    {
-                        title: 'Inicio Reincorporaciones y Reintegros',
-                        start: '2024-07-01',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 01/07 hasta el 31/08.'
-                        }
-                    },
-                    {
-                        title: 'Misiones Solidarias',
-                        start: '2024-07-24',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 24/07 hasta el 01/08.'
-                        }
-                    },
-                    {
-                        title: 'Inicio Admisión Especial y Movimientos Internos',
+                        title: 'Inscripción Especial y Movimientos Internos',
                         start: '2024-07-27',
                         extendedProps: {
                             additionalInfo: 'Desde el 27/07 hasta el 31/08.'
