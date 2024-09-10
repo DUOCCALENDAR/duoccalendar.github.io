@@ -256,15 +256,26 @@
             .fc-event {
                 font-size: 0.7em;
                 padding: 4px 8px;
+                max-height: 80px;
             }
 
             .fc-event-details {
                 font-size: 0.6em;
+                max-height: 60px;
             }
 
             .fc-daygrid-day {
                 padding: 6px;
                 margin: 1px;
+            }
+        }
+        
+        @media (max-width: 768px) and (orientation: portrait) {
+            .fc-event {
+                max-height: 80px;
+            }
+            .fc-event-details {
+                max-height: 60px;
             }
         }
 
@@ -507,3 +518,4 @@
     </script>
 </body>
 </html>
+
