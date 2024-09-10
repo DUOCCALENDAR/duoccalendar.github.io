@@ -309,30 +309,6 @@
             max-width: 100%;
             overflow-x: auto;
         }
-
-        .due-date-container {
-            background-color: #003366;
-            color: #ffd700;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            text-align: left;
-        }
-
-        .due-date-container h2 {
-            margin-top: 0;
-        }
-
-        .due-date-container ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        .due-date-container ul li {
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
@@ -344,15 +320,9 @@
         <h1>DUOC-CALENDAR</h1>
         <div class="calendar-message">
             <p>Para una mejor experiencia, gira tu dispositivo a orientación horizontal.</p>
-            <img src="https://imgur.com/x75UWyN.gif" alt="Girar dispositivo" />
+            <img src="https://example.com/your-gif.gif" alt="Girar dispositivo" />
         </div>
         <div id='calendar'></div>
-        <div class="due-date-container">
-            <h2>Próximos Plazos:</h2>
-            <ul id="due-dates-list">
-                <!-- Los eventos se agregarán aquí mediante JavaScript -->
-            </ul>
-        </div>
     </div>
 
     <script>
@@ -426,29 +396,6 @@
                             extendedProps: {
                                 additionalInfo: 'Haz click, revisa las páginas 12 y 13 del Reglamento Académico.'
                             }
-                        },
-                        {
-                            title: 'Vence Plazo para:',
-                            start: '2024-08-31',
-                            extendedProps: {
-                                additionalInfo: 'Haz click, revisa las páginas 12 y 13 del Reglamento Académico.'
-                            }
-                        },
-                        {
-                            title: 'Admisión Especial y Movimientos Internos.',
-                            start: '2024-08-31',
-                        },
-                        {
-                            title: 'Matricula Estudiantes de Continuidad.',
-                            start: '2024-08-31',
-                        },
-                        {
-                            title: 'Reincorporaciones y Reintegros.',
-                            start: '2024-08-31',
-                        },
-                        {
-                            title: 'Inscripción de Asignaturas.',
-                            start: '2024-08-31',
                         },
                         {
                             title: 'Vence Plazo Retiro de Asignaturas',
@@ -563,7 +510,6 @@
                     }
                 });
                 calendar.render();
-                updateDueDatesList();
             }
 
             function updateDateTime() {
@@ -585,40 +531,6 @@
                     calendarEl.style.display = 'block';
                     messageEl.style.display = 'none';
                 }
-            }
-
-            function updateDueDatesList() {
-                var events = [
-                    { title: 'Admisión Especial y Movimientos Internos.', start: '2024-08-31' },
-                    { title: 'Matricula Estudiantes de Continuidad.', start: '2024-08-31' },
-                    { title: 'Reincorporaciones y Reintegros.', start: '2024-08-31' },
-                    { title: 'Inscripción de Asignaturas.', start: '2024-08-31' },
-                    { title: 'Vence Plazo Retiro de Asignaturas', start: '2024-09-14' },
-                    { title: 'Feriado Fiestas Patrias', start: '2024-09-18' },
-                    { title: 'Feriado Fiestas Patrias', start: '2024-09-19' },
-                    { title: 'Feriado Fiestas Patrias', start: '2024-09-20' },
-                    { title: 'Feriado Fiestas Patrias', start: '2024-09-21' },
-                    { title: 'Feriado Encuentro de Dos Mundos', start: '2024-10-12' },
-                    { title: 'Feriado Iglesias Evangélicas y Protestantes', start: '2024-10-31' },
-                    { title: 'Feriado Todos los Santos', start: '2024-11-01' },
-                    { title: 'Vence Plazo Encuesta Docente', start: '2024-11-16' },
-                    { title: 'Vence Plazo Solicitud de Nota Pendiente', start: '2024-12-20' },
-                    { title: 'Publicación Reprobados por Inasistencia', start: '2024-11-30' },
-                    { title: 'Termino Período de Exámenes', start: '2024-12-23' },
-                    { title: 'Cierre Académico y Término de Semestre', start: '2024-12-24' },
-                    { title: 'Feriado Día de Navidad', start: '2024-12-25' }
-                ];
-                
-                var dueDatesList = document.getElementById('due-dates-list');
-                dueDatesList.innerHTML = '';
-
-                events.forEach(function(event) {
-                    var listItem = document.createElement('li');
-                    var date = new Date(event.start);
-                    var formattedDate = date.toLocaleDateString('es-ES', { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' });
-                    listItem.textContent = `${formattedDate}: ${event.title}`;
-                    dueDatesList.appendChild(listItem);
-                });
             }
 
             initializeCalendar();
