@@ -290,7 +290,7 @@
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 locale: 'es',
-                initialView: 'dayGridMonth',
+                initialView: window.innerWidth <= 768 ? 'dayGridWeek' : 'dayGridMonth',
                 validRange: {
                     start: '2024-01-01',
                     end: '2024-12-31'
@@ -488,8 +488,8 @@
                     right: 'prev,next today'
                 },
                 windowResize: function(view) {
-                    // Re-render the calendar on window resize to ensure responsiveness
-                    calendar.updateSize();
+                    // Update view based on window size
+                    calendar.changeView(window.innerWidth <= 768 ? 'dayGridWeek' : 'dayGridMonth');
                 }
             });
             calendar.render();
@@ -507,4 +507,3 @@
     </script>
 </body>
 </html>
-
