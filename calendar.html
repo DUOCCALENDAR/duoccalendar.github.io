@@ -29,7 +29,7 @@
 
         .container {
             width: 90%;
-            max-width: 1000px;
+            max-width: 1200px; /* Aumenta el tamaño máximo del contenedor */
             margin: 20px auto;
             padding: 20px;
             background-color: #ffffff;
@@ -73,10 +73,9 @@
             background-color: #ffffff;
             border: 2px solid #003366;
             color: #003366;
-            padding: 30px;
-            margin: 2px;
+            padding: 40px; /* Aumenta el padding para los días del calendario */
+            margin: 4px; /* Aumenta el margen para los días del calendario */
             box-sizing: border-box;
-            
         }
 
         .fc-daygrid-day-number {
@@ -217,6 +216,12 @@
             .fc-event-time {
                 font-size: 0.7em;
             }
+
+            /* Ajusta el tamaño del calendario en pantallas pequeñas */
+            .fc-daygrid-day {
+                padding: 30px;
+                margin: 2px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -249,6 +254,12 @@
 
             .fc-event-time {
                 font-size: 0.65em;
+            }
+
+            /* Ajusta el tamaño del calendario en pantallas muy pequeñas */
+            .fc-daygrid-day {
+                padding: 20px;
+                margin: 1px;
             }
         }
     </style>
@@ -312,190 +323,40 @@
                         }
                     },
                     {
-                        title: 'Inicio Admisión Especial y Movimientos Internos',
-                        start: '2024-07-27',
+                        title: 'Inicio de Clases Primer Semestre',
+                        start: '2024-08-01',
                         extendedProps: {
-                            additionalInfo: 'Desde el 27/07 hasta el 31/08.'
+                            additionalInfo: 'Desde el 01/08 hasta el 30/11.'
                         }
                     },
                     {
-                        title: 'Inscripción de Asignaturas',
-                        start: '2024-07-31',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8'
-                    },
-                    {
-                        title: 'Suspensión Académica',
-                        start: '2024-07-25',
-                        url: 'https://issuu.com/duocuc/docs/res_vra_03_2024_nuevo_reglamento_acade_mico_63_?ff',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 25/07 hasta el 24/08, haz click, revisa las páginas 12 y 13 del Reglamento Académico.'
-                        }
-                    },
-                    {
-                        title: 'Inicio de Clases',
-                        start: '2024-08-12'
-                    },
-                    {
-                        title: 'Inicio Modificación de Carga Académica',
-                        start: '2024-08-02',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 02/08 hasta el 24/08.'
-                        }
-                    },
-                    {
-                        title: 'Vence Plazo Modificación de Carga Académica',
-                        start: '2024-08-24',
-                       
-                    },
-                    {
-                        title: 'Inicio Período Extraordinario de Inscripción de Asignaturas',
-                        start: '2024-08-02',
-                        url: 'https://www.youtube.com/watch?v=aEBcCl6RFz8',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 02/08 hasta el 31/08.'
-                        }
-                    },
-                    {
-                        title: 'Retiro de Asignaturas',
-                        start: '2024-08-12',
-                        url: 'https://www.youtube.com/watch?v=ev4WbqpmpUs',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 12/08 hasta el 14/09.'
-                        }
-                    },
-                    {
-                        title: 'Feriado',
-                        start: '2024-08-15',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Vence Plazo Suspensión Académica',
-                        start: '2024-08-24',
-                        url: 'https://issuu.com/duocuc/docs/res_vra_03_2024_nuevo_reglamento_acade_mico_63_?ff',
-                        extendedProps: {
-                            additionalInfo: 'Haz click, revisa las páginas 12 y 13 del Reglamento Académico.'
-                        }
-                      
-                    },
-                    {
-                        title: 'Vence Plazo Retiro de Asignaturas',
-                        start: '2024-09-14',
-                        url: 'https://www.youtube.com/watch?v=ev4WbqpmpUs',
-                      
-                    },
-                    {
-                        title: 'Feriado Fiestas Patrias',
-                        start: '2024-09-18',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Fiestas Patrias',
-                        start: '2024-09-19',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Fiestas Patrias',
-                        start: '2024-09-20',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Fiestas Patrias',
-                        start: '2024-09-21',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Encuentro de Dos Mundos',
-                        start: '2024-10-12',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Iglesias Evangélicas y Protestantes',
-                        start: '2024-10-31',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Feriado Todos los Santos',
-                        start: '2024-11-01',
-                        className: 'holiday'
-                    },
-                    {
-                        title: 'Inicio Encuesta Docente',
-                        start: '2024-10-28',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 28/10 hasta el 16/11.'
-                        }
-                    },
-                    {
-                        title: 'Vence Plazo Encuesta Docente',
-                        start: '2024-11-16',
-                     
-                    },
-                    {
-                        title: 'Inicio Período Solicitud de Nota Pendiente',
-                        start: '2024-11-11',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 11/11 hasta el 20/12.'
-                        }
-                    },
-                    {
-                        title: 'Vence Plazo Solicitud de Nota Pendiente',
-                        start: '2024-12-20',
-                     
-                    },
-                    {
-                        title: 'Publicación Reprobados por Inasistencia',
+                        title: 'Finalización de Clases Primer Semestre',
                         start: '2024-11-30'
-                    },
-                    {
-                        title: 'Inicio Período de Exámenes',
-                        start: '2024-12-09',
-                        extendedProps: {
-                            additionalInfo: 'Desde el 09/12 hasta el 23/12.'
-                        }
-                    },
-                    {
-                        title: 'Termino Período de Exámenes',
-                        start: '2024-12-23',
-                     
-                    },
-                    {
-                        title: 'Cierre Académico y Término de Semestre',
-                        start: '2024-12-24'
-                    },
-                    {
-                        title: 'Feriado Día de Navidad',
-                        start: '2024-12-25',
-                        className: 'holiday'
                     }
                 ],
                 eventContent: function(arg) {
-                    let eventInfo = `<div class="fc-event-content">${arg.event.title}</div>`;
-                    if (arg.event.extendedProps.additionalInfo) {
-                        eventInfo += `<div class="fc-event-details">${arg.event.extendedProps.additionalInfo}</div>`;
-                    }
-                    return { html: eventInfo };
-                },
-                eventClick: function(info) {
-                    if (info.event.url) {
-                        window.open(info.event.url, '_blank');
-                        info.jsEvent.preventDefault();
-                    }
-                },
-                headerToolbar: {
-                    left: '',
-                    center: 'title',
-                    right: 'prev,next today'
+                    var event = arg.event;
+                    var title = event.title;
+                    var additionalInfo = event.extendedProps.additionalInfo || '';
+                    var html = `<div class="fc-event-content">
+                                    <div class="fc-event-title">${title}</div>
+                                    <div class="fc-event-details">${additionalInfo}</div>
+                                </div>`;
+                    return { html: html };
                 }
             });
             calendar.render();
 
-            function updateDateTime() {
-                const now = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                document.getElementById('datetime').textContent = now.toLocaleDateString('es-ES', options);
+            // Mostrar la fecha y hora actuales
+            var datetimeEl = document.getElementById('datetime');
+            function updateDatetime() {
+                var now = new Date();
+                var formattedDate = now.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                var formattedTime = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+                datetimeEl.textContent = `Fecha y hora actual: ${formattedDate} ${formattedTime}`;
             }
-            updateDateTime();
-            setInterval(updateDateTime, 1000);
+            setInterval(updateDatetime, 1000);
+            updateDatetime();
         });
     </script>
 </body>
