@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUOC-CALENDAR</title>
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/list.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/list.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales/es.js'></script>
     <style>
         body {
@@ -332,7 +334,13 @@
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     locale: 'es',
                     initialView: 'dayGridMonth',
+                    views: {
+                        listWeek: {
+                            buttonText: 'Lista de la semana'
+                        }
+                    },
                     events: [
+                        // Tus eventos aquí
                         {
                             title: 'Inicio Admisión Especial y Movimientos Internos',
                             start: '2024-07-27',
@@ -505,13 +513,13 @@
                         }
                     },
                     headerToolbar: {
-                        left: '',
+                        left: 'prev,next today',
                         center: 'title',
-                        right: 'prev,next today'
+                        right: 'dayGridMonth,listWeek'
                     },
                     windowResize: function(view) {
                         // Update view based on window size
-                        calendar.changeView(window.innerWidth <= 768 ? 'dayGridWeek' : 'dayGridMonth');
+                        calendar.changeView(window.innerWidth <= 768 ? 'listWeek' : 'dayGridMonth');
                     }
                 });
                 calendar.render();
