@@ -180,20 +180,32 @@
 
         .fc-event-content {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fc-event-title {
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 2px;
+            font-size: 0.9em;
         }
 
         .fc-event-details {
-            text-align: left;
-            margin-top: 2px;
-            padding-left: 5px;
             font-size: 0.8em;
             line-height: 1.2;
+            margin-top: 2px;
+            text-align: center;
             overflow-wrap: break-word;
+            padding: 0 5px;
+            white-space: normal;
         }
 
         .fc-event-details ul {
             list-style-type: disc;
-            padding-left: 20px;
+            padding-left: 10px;
         }
 
         .fc-event-details li {
@@ -348,7 +360,6 @@
                         {
                             title: 'Vence Plazo para: Matrícula Estudiantes de Continuidad, Admisión Especial Interna y Movimientos Internos, Reincorporaciones y Reintegros, Inscripción de Asignaturas',
                             start: '2024-08-31',
-                            
                         },
                         {
                             title: 'Suspensión Académica',
