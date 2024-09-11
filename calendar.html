@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUOC-CALENDAR</title>
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.css' rel='stylesheet' />
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/list.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/list.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales/es.js'></script>
     <style>
         body {
@@ -78,36 +76,253 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             text-align: center;
             font-weight: bold;
-            z-index: 1000
-html
-Copiar código
+            z-index: 1000;
+            width: 80%;
         }
-        
-        .fc-event-title {
-            font-weight: bold;
+
+        .calendar-message img {
+            margin-top: 20px;
+            width: 50%;
+            max-width: 300px;
+        }
+
+        .fc {
+            background-color: #003366;
+        }
+
+        .fc-daygrid-day {
+            background-color: #ffffff;
+            border: 2px solid #003366;
             color: #003366;
+            padding: 8px;
+            margin: 2px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .fc-daygrid-day-number {
+            color: #ffd700;
+        }
+
+        .fc-daygrid-day-top {
+            background-color: #003366;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .fc-daygrid-day-top .fc-daygrid-day-number {
+            color: #ffffff;
+        }
+
+        .fc-toolbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .fc-toolbar-title {
+            background-color: #003366;
+            color: #ffd700;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 1.3em;
+            text-transform: uppercase;
+        }
+
+        .fc-prev-button, .fc-next-button, .fc-today-button {
+            background-color: #000000;
+            color: #ffd700;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin: 0 2px;
+        }
+
+        .fc-prev-button:hover, .fc-next-button:hover, .fc-today-button:hover {
+            background-color: #333333;
+        }
+
+        .fc-prev-button:before, .fc-next-button:before {
+            color: #ffd700;
+        }
+
+        .fc-col-header-cell-cushion {
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .fc-event {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            background-color: #28a745;
+            color: #ffffff !important;
+            border-radius: 5px;
+            padding: 5px 8px;
+            margin-bottom: 2px;
+            box-sizing: border-box;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            font-size: 0.9em;
+        }
+
+        .fc-event.holiday {
+            background-color: #ff6347;
+            color: #ffffff !important;
+        }
+
+        .fc-event-content {
+            text-align: center;
         }
 
         .fc-event-details {
-            font-size: 0.9em;
-            color: #666;
+            text-align: left;
+            margin-top: 2px;
+            padding-left: 5px;
+            font-size: 0.8em;
+            line-height: 1.2;
+            overflow-wrap: break-word;
         }
 
-        .holiday {
-            background-color: #ffcccc;
+        .fc-event-details ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .fc-event-details li {
+            margin-bottom: 3px;
+        }
+
+        .fc-event-content a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .fc-event-content a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            .logo {
+                width: 150px;
+            }
+
+            .datetime {
+                font-size: 1em;
+                margin-bottom: 15px;
+            }
+
+            .fc-toolbar-title {
+                font-size: 1.1em;
+            }
+
+            .fc-event {
+                font-size: 0.85em;
+                padding: 5px 10px;
+            }
+
+            .fc-event-details {
+                font-size: 0.7em;
+            }
+
+            .fc-daygrid-day {
+                padding: 8px;
+                margin: 1px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.2em;
+            }
+
+            .logo {
+                width: 120px;
+            }
+
+            .datetime {
+                font-size: 0.9em;
+                margin-bottom: 10px;
+            }
+
+            .fc-toolbar-title {
+                font-size: 1em;
+            }
+
+            .fc-event {
+                font-size: 0.7em;
+                padding: 4px 8px;
+                max-height: 80px;
+            }
+
+            .fc-event-details {
+                font-size: 0.6em;
+                max-height: 60px;
+            }
+
+            .fc-daygrid-day {
+                padding: 6px;
+                margin: 1px;
+            }
+        }
+
+        @media (max-width: 768px) and (orientation: portrait) {
+            .calendar-message {
+                display: block;
+            }
+            #calendar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) and (orientation: landscape) {
+            .calendar-message {
+                display: none;
+            }
+            #calendar {
+                display: block;
+            }
+        }
+
+        #calendar {
+            max-width: 100%;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
     <div class="logo-container">
-        <img src="logo.png" alt="Logo DUOC" class="logo">
+        <img src="https://imgur.com/ROa57L6.png" alt="Logo" class="logo"/>
     </div>
-
     <div class="container">
-        <div class="datetime" id="datetime"></div>
-        <h1>Calendario Académico</h1>
+        <div id="datetime" class="datetime"></div>
+        <h1>DUOC-CALENDAR</h1>
+        <div class="calendar-message">
+            <p>Para una mejor experiencia, gira tu dispositivo a orientación horizontal.</p>
+            <img src="https://imgur.com/x75UWyN.gif" alt="Girar dispositivo" />
+        </div>
         <div id='calendar'></div>
-        <div class="calendar-message">Por favor, rota tu dispositivo para ver el calendario.</div>
     </div>
 
     <script>
@@ -117,11 +332,6 @@ Copiar código
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     locale: 'es',
                     initialView: 'dayGridMonth',
-                    views: {
-                        dayGridMonth: {
-                            titleFormat: { year: 'numeric', month: 'long' }
-                        }
-                    },
                     events: [
                         {
                             title: 'Inicio Admisión Especial y Movimientos Internos',
@@ -137,7 +347,8 @@ Copiar código
                         },
                         {
                             title: 'Vence Plazo para: Matrícula Estudiantes de Continuidad, Admisión Especial Interna y Movimientos Internos, Reincorporaciones y Reintegros, Inscripción de Asignaturas',
-                            start: '2024-08-31'
+                            start: '2024-08-31',
+                            
                         },
                         {
                             title: 'Suspensión Académica',
@@ -160,7 +371,7 @@ Copiar código
                         },
                         {
                             title: 'Vence Plazo Modificación de Carga Académica',
-                            start: '2024-08-24'
+                            start: '2024-08-24',
                         },
                         {
                             title: 'Inicio Período Extraordinario de Inscripción de Asignaturas',
@@ -194,7 +405,7 @@ Copiar código
                         {
                             title: 'Vence Plazo Retiro de Asignaturas',
                             start: '2024-09-14',
-                            url: 'https://www.youtube.com/watch?v=ev4WbqpmpUs'
+                            url: 'https://www.youtube.com/watch?v=ev4WbqpmpUs',
                         },
                         {
                             title: 'Feriado Fiestas Patrias',
@@ -240,7 +451,7 @@ Copiar código
                         },
                         {
                             title: 'Vence Plazo Encuesta Docente',
-                            start: '2024-11-16'
+                            start: '2024-11-16',
                         },
                         {
                             title: 'Inicio Período Solicitud de Nota Pendiente',
@@ -251,7 +462,7 @@ Copiar código
                         },
                         {
                             title: 'Vence Plazo Solicitud de Nota Pendiente',
-                            start: '2024-12-20'
+                            start: '2024-12-20',
                         },
                         {
                             title: 'Publicación Reprobados por Inasistencia',
@@ -266,7 +477,7 @@ Copiar código
                         },
                         {
                             title: 'Termino Período de Exámenes',
-                            start: '2024-12-23'
+                            start: '2024-12-23',
                         },
                         {
                             title: 'Cierre Académico y Término de Semestre',
@@ -294,13 +505,13 @@ Copiar código
                         }
                     },
                     headerToolbar: {
-                        left: 'prev,next today',
+                        left: '',
                         center: 'title',
-                        right: 'dayGridMonth'
+                        right: 'prev,next today'
                     },
                     windowResize: function(view) {
                         // Update view based on window size
-                        calendar.changeView(window.innerWidth <= 768 ? 'dayGridMonth' : 'dayGridMonth');
+                        calendar.changeView(window.innerWidth <= 768 ? 'dayGridWeek' : 'dayGridMonth');
                     }
                 });
                 calendar.render();
