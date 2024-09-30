@@ -348,6 +348,11 @@
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     locale: 'es',
                     initialView: 'dayGridMonth',
+                    validRange: {
+                    start: '2024-01-01',
+                    end: '2024-12-31'
+                },
+
                     events: [
                         {
                             title: 'Inicio Admisión Especial y Movimientos Internos',
